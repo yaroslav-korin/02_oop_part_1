@@ -8,7 +8,7 @@ export default class ItemWeightComparator implements ItemComparator {
         } else if (first.itemWeight < second.itemWeight) {
             return -1;
         } else {
-            return first.compareTo(second)
+            return first.compareTo(second);
         }
     }
 }

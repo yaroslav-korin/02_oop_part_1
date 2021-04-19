@@ -1,13 +1,12 @@
 import Weapon from "./Weapon";
 
 export default class Sword extends Weapon {
-    constructor(baseDamage, damageModifier, baseDurability, durabilityModifier) {
-        super('sword', baseDamage, baseDurability, 1, 1);
+    constructor(baseDamage: number, baseDurability: number, value: number, weight: number) {
+        super('sword', baseDamage, baseDurability, value, weight);
     }
 
-public polish() {
-    this.damageModifier += Weapon.MODIFIER_CHANGE_RATE;
-    //TODO enhance method
-}
+    public polish(): void {
+        this.damageModifier = this.damageModifier + this.MODIFIER_CHANGE_RATE;
+    }
 
 }

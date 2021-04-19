@@ -15,10 +15,10 @@ const c: Item = new Sword(40, 1, 100, 3);
 const pizza: Item = new Pizza(12, false);
 
 // Add the items to the inventory
-// inventory.addItem(a);
-// inventory.addItem(b);
-// inventory.addItem(c);
-// inventory.addItem(pizza);
+inventory.addItem(a);
+inventory.addItem(b);
+inventory.addItem(c);
+inventory.addItem(pizza);
 
 // Display the inventory
 console.log(inventory.toString());

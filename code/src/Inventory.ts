@@ -2,7 +2,7 @@ import Item from "./Item";
 import ItemComparator from "./ItemComparator";
 
 export default class Inventory {
-    private items: Item[];
+    private items: Item[] = [];
 
     public sort();
     public sort(comparator: ItemComparator);
@@ -10,16 +10,15 @@ export default class Inventory {
         if (comparator) {
             return this.items.sort((a, b) => a.itemWeight - b.itemWeight);
         } else {
-            return this.items.sort((a, b) => a.itemValue - b.itemValue);
+            return this.items.sort((a, b) => a.value - b.value);
         }
     }
 
-    public addItem(): void {
-        // is outer of current home task
+    public addItem(item: Item): void {
+        this.items.push(item )
     }
 
     public toString(): string {
         return this.items.join(', ');
     }
-
 }
