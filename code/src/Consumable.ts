@@ -6,7 +6,7 @@ export default abstract class Consumable extends Item {
 
 
     protected constructor(name: string, value: number, weight: number, spoiled: boolean) {
-        super(name, value, weight;
+        super(name, value, weight);
         this._consumed = false;
         this._spoiled = spoiled;
     }
@@ -21,7 +21,7 @@ export default abstract class Consumable extends Item {
         return answer;
     }
 
-    set consumed(value: boolean): void {
+    set consumed(value: boolean) {
         this._consumed = value;
     }
 
