@@ -1,5 +1,5 @@
-import {Item} from "./Item";
-import {ItemComparator} from "./ItemComparator";
+import Item from "./Item";
+import ItemComparator from "./ItemComparator";
 
 export default class Inventory {
     private items: Item[];
@@ -14,7 +14,11 @@ export default class Inventory {
         }
     }
 
-    public toString() {
+    public addItem(): void {
+        // is outer of current home task
+    }
+
+    public toString(): string {
         return this.items.join(', ');
     }
 

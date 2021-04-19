@@ -1,11 +1,8 @@
 import Weapon from "./Weapon";
 
 export default class Sword extends Weapon {
-    public name: string;
-
     constructor(baseDamage, damageModifier, baseDurability, durabilityModifier) {
-        super(baseDamage, damageModifier, baseDurability, durabilityModifier);
-        this.name = 'sword';
+        super('sword', baseDamage, baseDurability, 1, 1);
     }
 
 public polish() {

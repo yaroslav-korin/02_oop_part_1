@@ -1,32 +1,31 @@
-export default abstract class Consumable {
-    private readonly consumed: boolean
+import Item from "./Item";
+
+export default abstract class Consumable extends Item {
     private readonly spoiled: boolean
-    private readonly name: string
+    protected readonly name: string
+    protected consumed: boolean
 
 
-    constructor() {
-        // super(props)
+    protected constructor(name, value, weight, spoiled) {
+        super(name, value, weight)
         this.consumed = false;
         this.spoiled = spoiled;
     }
 
-    private eat(): string {
-        if (this.consumed) {
-            return `There is nothing left of the ${this.name} to consume.`;
-        } else {
-            let answer: string = `You eat the ${this.name}.`;
+    public eat(): string {
+        let answer: string = `You eat the ${this.name}.`;
 
-            if (this.spoiled) {
-                answer += '\n You feel sick.';
-            }
-
-            return answer;
+        if (this.spoiled) {
+            answer += '\n You feel sick.';
         }
+
+        return answer;
     }
 
     public use(): string {
-        if (!this.consumed && !this.spoiled) {
-            return this.eat();
+        if (this.consumed) {
+            return `There is nothing left of the ${this.name} to consume.`;
         }
+        return this.eat();
     }
 }

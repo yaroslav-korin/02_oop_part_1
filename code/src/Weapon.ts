@@ -1,7 +1,7 @@
 import Item from "./Item";
 
 export default abstract class Weapon extends Item {
-    public static MODIFIER_CHANGE_RATE: number = 10;
+    public static MODIFIER_CHANGE_RATE: number = 0.05;
     private readonly isBroken: boolean;
 
     private readonly baseDamage: number;
@@ -10,18 +10,12 @@ export default abstract class Weapon extends Item {
     protected durabilityModifier: number;
 
 
-    constructor(baseDamage, damageModifier, baseDurability, durabilityModifier) {
+    protected constructor(name: string, baseDamage: number, baseDurability: number, value: number, weight: number) {
 
-        super();
+        super(name, value, weight);
         this.isBroken = false;
         this.baseDamage = baseDamage;
         this.baseDurability = baseDurability;
-        this.damageModifier = damageModifier;
-        this.durabilityModifier = durabilityModifier;
-    }
-
-    private updateDurability(): void {
-        // this.
     }
 
     public getDamage(): number {

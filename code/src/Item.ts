@@ -19,7 +19,7 @@ export default abstract class Item implements Comparable<Item> {
         counter++;
     }
 
-    static get numberOfItems(): number {
+    get numberOfItems(): number {
         return counter;
     }
 
@@ -37,7 +37,7 @@ export default abstract class Item implements Comparable<Item> {
         } else if (this.value < other.value) {
             return -1;
         } else {
-            //if equal
+            return this.name.localeCompare(other.name)
         }
     }
 
