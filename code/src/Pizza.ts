@@ -1,15 +1,15 @@
 import Consumable from "./Consumable";
 
 export default class Pizza extends Consumable {
-    private numberOfSlices: number
-    private slicesEaten: number
+    private numberOfSlices: number;
+    private slicesEaten: number;
 
     constructor(numberOfSlices, spoiled) {
         super();
         this.numberOfSlices = numberOfSlices;
     }
 
-    public eat() {
+    public eat(): string {
         if (this.slicesEaten < this.numberOfSlices) {
             this.slicesEaten++;
 

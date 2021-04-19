@@ -2,20 +2,20 @@ import {Item} from "./Item";
 import {ItemComparator} from "./ItemComparator";
 
 export default class Inventory {
-    private items: Item[]
+    private items: Item[];
 
     public sort();
     public sort(comparator: ItemComparator);
     public sort(comparator?: ItemComparator) {
         if (comparator) {
-            return this.items.sort((a, b) => a.itemWeight - b.itemWeight)
+            return this.items.sort((a, b) => a.itemWeight - b.itemWeight);
         } else {
-            return this.items.sort((a, b) => a.itemValue - b.itemValue)
+            return this.items.sort((a, b) => a.itemValue - b.itemValue);
         }
     }
 
     public toString() {
-        return this.items.join(', ')
+        return this.items.join(', ');
     }
 
 }

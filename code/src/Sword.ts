@@ -1,7 +1,7 @@
 import Weapon from "./Weapon";
 
 export default class Sword extends Weapon {
-    public name: string
+    public name: string;
 
     constructor(baseDamage, damageModifier, baseDurability, durabilityModifier) {
         super(baseDamage, damageModifier, baseDurability, durabilityModifier);

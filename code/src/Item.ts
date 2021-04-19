@@ -19,15 +19,15 @@ export default abstract class Item implements Comparable<Item> {
         counter++;
     }
 
-    static get numberOfItems() {
+    static get numberOfItems(): number {
         return counter;
     }
 
-    get itemValue() {
+    get itemValue(): number {
         return this.value
     }
 
-    get itemWeight() {
+    get itemWeight(): number {
         return this.weight
     }
 

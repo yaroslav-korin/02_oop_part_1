@@ -10,7 +10,7 @@ export default abstract class Consumable {
         this.spoiled = spoiled;
     }
 
-    private eat() {
+    private eat(): string {
         if (this.consumed) {
             return `There is nothing left of the ${this.name} to consume.`;
         } else {
@@ -24,9 +24,9 @@ export default abstract class Consumable {
         }
     }
 
-    public use() {
+    public use(): string {
         if (!this.consumed && !this.spoiled) {
-            return this.eat()
+            return this.eat();
         }
     }
 }

@@ -1,18 +1,18 @@
 import Item from "./Item";
 
 export default abstract class Weapon extends Item {
-    public static MODIFIER_CHANGE_RATE: number = 10
-    private readonly isBroken: boolean
+    public static MODIFIER_CHANGE_RATE: number = 10;
+    private readonly isBroken: boolean;
 
-    private readonly baseDamage: number
-    private readonly baseDurability: number
-    protected damageModifier: number
-    protected durabilityModifier: number
+    private readonly baseDamage: number;
+    private readonly baseDurability: number;
+    protected damageModifier: number;
+    protected durabilityModifier: number;
 
 
     constructor(baseDamage, damageModifier, baseDurability, durabilityModifier) {
 
-        super()
+        super();
         this.isBroken = false;
         this.baseDamage = baseDamage;
         this.baseDurability = baseDurability;
@@ -24,12 +24,12 @@ export default abstract class Weapon extends Item {
         // this.
     }
 
-    public getDamage() {
-        return this.baseDamage + this.damageModifier
+    public getDamage(): number {
+        return this.baseDamage + this.damageModifier;
     }
 
-    public getDurability() {
-        return this.baseDurability + this.durabilityModifier
+    public getDurability(): number {
+        return this.baseDurability + this.durabilityModifier;
     }
 
     public toString(): string {
@@ -39,7 +39,7 @@ export default abstract class Weapon extends Item {
     public use(): string {
         return this.isBroken
             ? `You can't use the ${this.name}, it is broken.`
-            : `You use the ${this.name}, dealing ${this.getDamage()} points of damage.`
+            : `You use the ${this.name}, dealing ${this.getDamage()} points of damage.`;
     }
 
     abstract polish(): void;
