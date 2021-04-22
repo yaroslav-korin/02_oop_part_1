@@ -8,7 +8,7 @@ export default class Inventory {
     public sort(comparator: ItemComparator);
     public sort(comparator?: ItemComparator) {
         if (comparator) {
-            return this.items.sort((a, b) => a.itemWeight - b.itemWeight);
+            return this.items.sort((a, b) => a.weight - b.weight);
         } else {
             return this.items.sort((a, b) => a.value - b.value);
         }

@@ -6,7 +6,6 @@ export default class Sword extends Weapon {
     }
 
     public polish(): void {
-        this.damageModifier = this.damageModifier + this.MODIFIER_CHANGE_RATE;
+        this.setDamageModifier(this.getDamageModifier() + this.MODIFIER_CHANGE_RATE);
     }
-
 }

@@ -21,6 +21,14 @@ export default abstract class Consumable extends Item {
         return answer;
     }
 
+    get consumed() {
+        return this._consumed;
+    }
+
+    get spoiled() {
+        return this._spoiled;
+    }
+
     set consumed(value: boolean) {
         this._consumed = value;
     }
