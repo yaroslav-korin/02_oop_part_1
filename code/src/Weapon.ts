@@ -49,22 +49,22 @@ export default abstract class Weapon extends Item {
 
     public use(): string {
         let answer: string;
-        const currentEffectiveDurability = this.getDurability()
+        const currentEffectiveDurability = this.getDurability();
 
         if (currentEffectiveDurability > 0) {
             answer = `You use the ${this.name}, dealing ${this.getDamage()} points of damage.`;
             const nextEffectiveDurability = currentEffectiveDurability - this.MODIFIER_CHANGE_RATE;
 
-            this.setDurabilityModifier(this._durabilityModifier - this.MODIFIER_CHANGE_RATE)
+            this.setDurabilityModifier(this._durabilityModifier - this.MODIFIER_CHANGE_RATE);
 
             if (nextEffectiveDurability <= 0) {
-                answer += `The ${this.name} breaks.`
+                answer += `The ${this.name} breaks.`;
             }
         } else {
             answer = `You can't use the ${this.name}, it is broken.`;
         }
 
-        return answer
+        return answer;
     }
 
     abstract polish(): void;

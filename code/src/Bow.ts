@@ -6,8 +6,8 @@ export default class Bow extends Weapon {
     }
 
     public polish(): void {
-        const increasedDurabilityModifier = this.durabilityModifier + this.MODIFIER_CHANGE_RATE;
-        this.durabilityModifier = increasedDurabilityModifier < 1 ? increasedDurabilityModifier : 1;
+        const increasedDurabilityModifier = this.getDurabilityModifier() + this.MODIFIER_CHANGE_RATE;
+        this.setDurabilityModifier(increasedDurabilityModifier < 1 ? increasedDurabilityModifier : 1);
     }
 
 }
